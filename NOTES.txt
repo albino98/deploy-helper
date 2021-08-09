@@ -1,0 +1,3 @@
+command for deploy (to run in terminal):
+
+pyinstaller.exe --onefile --windowed main.py
