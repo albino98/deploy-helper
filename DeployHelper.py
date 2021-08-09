@@ -20,21 +20,57 @@ class Ui_DeployHelper(object):
         self.centralwidget = QtWidgets.QWidget(DeployHelper)
         self.centralwidget.setObjectName("centralwidget")
         self.listWidget_deploys = QtWidgets.QListWidget(self.centralwidget)
-        self.listWidget_deploys.setGeometry(QtCore.QRect(10, 50, 256, 591))
+        self.listWidget_deploys.setGeometry(QtCore.QRect(10, 50, 256, 661))
+        self.listWidget_deploys.setStyleSheet("QListWidget{\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 5px;\n"
+"    padding: 0 8px;\n"
+"    background: white;\n"
+"    selection-background-color: darkgray;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"}")
+        self.listWidget_deploys.setItemAlignment(QtCore.Qt.AlignHCenter)
         self.listWidget_deploys.setObjectName("listWidget_deploys")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 10, 141, 31))
+        self.label.setGeometry(QtCore.QRect(20, 10, 181, 31))
         font = QtGui.QFont()
-        font.setFamily("LCDMono2")
+        font.setFamily("Lucida Console")
         font.setPointSize(16)
         self.label.setFont(font)
+        self.label.setStyleSheet("font-family: \"Lucida Console\", \"Courier New\", monospace;")
         self.label.setObjectName("label")
         self.Btn_AddDeploy = QtWidgets.QPushButton(self.centralwidget)
-        self.Btn_AddDeploy.setGeometry(QtCore.QRect(290, 50, 101, 41))
+        self.Btn_AddDeploy.setGeometry(QtCore.QRect(280, 50, 121, 41))
+        self.Btn_AddDeploy.setStyleSheet("QPushButton {\n"
+"    /*border: 2px solid #000000;*/\n"
+"    border-radius: 8px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #2c509e, stop: 1 #0092d1);\n"
+"    min-width: 80px;\n"
+"    color:white;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"    font-size: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #0092d1, stop: 1 #2c509e);\n"
+"}\n"
+"\n"
+"QPushButton:flat {\n"
+"    border: none; /* no border for a flat push button */\n"
+"}\n"
+"\n"
+"QPushButton:default {\n"
+"    border-color: navy; /* make the default button prominent */\n"
+"}")
         self.Btn_AddDeploy.setObjectName("Btn_AddDeploy")
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(420, 50, 1211, 661))
+        self.groupBox.setObjectName("groupBox")
         DeployHelper.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(DeployHelper)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1642, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1642, 22))
         self.menubar.setObjectName("menubar")
         DeployHelper.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(DeployHelper)
@@ -49,13 +85,4 @@ class Ui_DeployHelper(object):
         DeployHelper.setWindowTitle(_translate("DeployHelper", "MainWindow"))
         self.label.setText(_translate("DeployHelper", "Your Deploys:"))
         self.Btn_AddDeploy.setText(_translate("DeployHelper", "Add Deploy"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    DeployHelper = QtWidgets.QMainWindow()
-    ui = Ui_DeployHelper()
-    ui.setupUi(DeployHelper)
-    DeployHelper.show()
-    sys.exit(app.exec_())
+        self.groupBox.setTitle(_translate("DeployHelper", "Manage Deploy"))

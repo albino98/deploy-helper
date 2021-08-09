@@ -29,8 +29,21 @@
       <x>10</x>
       <y>50</y>
       <width>256</width>
-      <height>591</height>
+      <height>661</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QListWidget{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    background: white;
+    selection-background-color: darkgray;
+	font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+}</string>
+    </property>
+    <property name="itemAlignment">
+     <set>Qt::AlignHCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -38,15 +51,18 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>141</width>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>LCDMono2</family>
+      <family>Lucida Console</family>
       <pointsize>16</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;</string>
     </property>
     <property name="text">
      <string>Your Deploys:</string>
@@ -55,14 +71,52 @@
    <widget class="QPushButton" name="Btn_AddDeploy">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>280</x>
       <y>50</y>
-      <width>101</width>
+      <width>121</width>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    /*border: 2px solid #000000;*/
+    border-radius: 8px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #2c509e, stop: 1 #0092d1);
+    min-width: 80px;
+	color:white;
+	font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+	font-size: 15px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #0092d1, stop: 1 #2c509e);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+    </property>
     <property name="text">
      <string>Add Deploy</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>50</y>
+      <width>1211</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Manage Deploy</string>
     </property>
    </widget>
   </widget>
@@ -72,7 +126,7 @@
      <x>0</x>
      <y>0</y>
      <width>1642</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
