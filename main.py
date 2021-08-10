@@ -1,8 +1,8 @@
 from xml.etree.ElementTree import ElementTree
 
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, QSize
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QMainWindow, QApplication, QSplashScreen, QFileDialog
+from PyQt5.QtWidgets import QMainWindow, QApplication, QSplashScreen, QFileDialog, QListWidgetItem, QListWidget
 from PyQt5.uic.properties import QtGui
 from DeployHelper import Ui_DeployHelper
 from AddDeploy import Ui_AddDeploy
@@ -15,14 +15,80 @@ class Main(QMainWindow, Ui_DeployHelper):
     def __init__(self):
         super(Main, self).__init__()
         self.setupUi(self)
+        self.populateDeploysList(False)
+        self.groupBox.hide()
+        # POPULATE AND SHOW GROUPBOX WITH DEPLOY INFO WHEN A DEPLOY ITEM IS SELECTED
+        self.listWidget_Deploys.itemClicked.connect(self.populateAndShowGroupBox)
 
+        self.Btn_StartDeploy.clicked.connect(self.getDeployInfoByName)
+
+
+    def populateDeploysList(self, updateList):
+        if updateList:
+            self.listWidget_Deploys.clear()
+        # COLLECT ALL DEPLOYS NODES OF XML
+        tree = ElementTree()
+        root = tree.parse("Deploys.xml")
+        # GET ALL NODE 'DEPLOY' OF XML
+        allDeploys = root.findall('.//deploy')
+        for node in allDeploys:
+            deploy_name = node.get('name')
+            newQListItem = QListWidgetItem()
+            newQListItem.setText(deploy_name)
+            self.listWidget_Deploys.addItem(newQListItem)
+
+    def populateAndShowGroupBox(self):
+        # GET THE NAME OF SELECTED DEPLOY
+        selected_deploy = self.listWidget_Deploys.selectedItems()[0].text()
+        # GET THE DEPLOY INFO
+        deploy_info = self.getDeployInfoByName(selected_deploy)
+        #print(str(deploy_info))
+
+        # CLEAR GROUPBOX FIELDS
+        self.lineEdit_DeployName.clear()
+        self.textEdit_SourceFiles.clear()
+        self.lineEdit_DestPath.clear()
+
+        # POPULATE GROUP BOX FILEDS WITH DATA OF SELECTED DEPLOY
+        self.lineEdit_DeployName.setText(deploy_info['name'])
+        for source_file in deploy_info['source_files']:
+            self.textEdit_SourceFiles.append(source_file)
+        self.lineEdit_DestPath.setText(deploy_info['destination_path'])
+
+
+
+        # SHOW GROUP BOX
+        self.groupBox.show()
+
+    def getDeployInfoByName(self, deploy_name):
+        try:
+            deploy_info = {"name": "", "source_files": [], "destination_path": "", 'name': deploy_name}
+            # COLLECT ALL DEPLOYS NODES OF XML
+            tree = ElementTree()
+            root = tree.parse("Deploys.xml")
+
+            # GET THE DEPLOY NODE BY NAME
+            deploy_node = root.find('.//deploy[@name="' + deploy_name + '"]')
+            if deploy_node is not None:
+                source_files_nodes = deploy_node.findall('.//sourceFilePath')
+                for source in source_files_nodes:
+                    deploy_info['source_files'].append(source.text)
+
+                destination_path_node = deploy_node.find('.//destinationPath')
+                if destination_path_node is not None:
+                    deploy_info['destination_path'] = destination_path_node.text
+
+        except Exception as error:
+            print(str(error))
+
+        return deploy_info
 
 
 class AddDeployWindow(QMainWindow, Ui_AddDeploy):
     def __init__(self):
         super(AddDeployWindow, self).__init__()
         self.setupUi(self)
-        #self.Btn_SelectDestinationPath.clicked.connect(self.close)
+        # self.Btn_SelectDestinationPath.clicked.connect(self.close)
 
         # BUTTON Btn_SelectSourceFiles CLICK EVENT
         self.Btn_SelectSourceFiles.clicked.connect(self.selectSourceFiles)
@@ -35,19 +101,29 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
 
 
     def OPEN(self):
+        main.close()
         self.show()
 
+    # NOT RENAME (OVERRIDE)
+    def closeEvent(self, event):
+        can_exit = True
+        if can_exit:
+            main.populateDeploysList(True)
+            main.show()
+            event.accept()  # let the window close
+        else:
+            event.ignore()
 
     # OPEN THE FILE EXPLORER TO SELECT SOURCE FILES
     def selectSourceFiles(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        file_names, _ = QFileDialog.getOpenFileNames(None, "Select Files", "","All Files (*);;Python Files (*.py)", options=options)
-        #self.textEdit_SourceFiles.setText(fileName)
-        #print(file_names)
+        file_names, _ = QFileDialog.getOpenFileNames(None, "Select Files", "", "All Files (*);;Python Files (*.py)",
+                                                     options=options)
+        # self.textEdit_SourceFiles.setText(fileName)
+        # print(file_names)
         for file in file_names:
             self.textEdit_SourceFiles.append(file)
-
 
     # OPEN THE FILE EXPLORER TO SELECT THE DESTINATION PATH
     def selectDestinationPath(self):
@@ -55,7 +131,6 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
         options |= QFileDialog.DontUseNativeDialog
         dest_path = str(QFileDialog.getExistingDirectory(self, "Select Directory", "", options=options))
         self.lineEdit_DestPath.setText(dest_path)
-
 
     # Btn_SaveDeploy ACTION (SAVE DEPLOY ON XML FILE AND CLOSE AddDeployWindow)
     def saveDeployAction(self):
@@ -67,26 +142,34 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
 
             # CHECK INSERTED VALUES
             if (not dest_path) or (not deploy_name) or (not source_files_arr):
-                self.label_ErrorSaveDeploy.setText('Please fill in all fields')
-                self.label_ErrorSaveDeploy.show()
+                self.showErrorMessage(True, 'Please fill in all fields')
             else:
                 self.label_ErrorSaveDeploy.hide()
                 saveResult = self.saveDeployOnXml(dest_path, deploy_name, source_files_arr)
 
                 if saveResult == 0:  # ERROR 0: ALREADY EXISTS A DEPLOY NODE WITH THE SAME NAME
-                    self.label_ErrorSaveDeploy.setText('Deploy not saved: already exists a deploy with the same name')
-                    self.label_ErrorSaveDeploy.show()
+                    self.showErrorMessage(True, 'Deploy not saved: already exists a deploy with the same name')
                 else:
-                    self.label_ErrorSaveDeploy.setStyleSheet("""
-                                                            font-family: "Lucida Console", "Courier New", monospace;
-                                                            font-size: 15px;
-                                                            color:green;
-                                                            """)
-                    self.label_ErrorSaveDeploy.setText('Deploy Saved')
-                    self.label_ErrorSaveDeploy.show()
+                    self.showErrorMessage(False, 'Deploy Saved')
 
         except Exception as error:
             print(str(error))
+
+    def showErrorMessage(self, error, message):
+        if error:
+            self.label_ErrorSaveDeploy.setStyleSheet("""
+                                                    font-family: "Lucida Console", "Courier New", monospace;
+                                                    font-size: 15px;
+                                                    color:red;
+                                                    """)
+        else:
+            self.label_ErrorSaveDeploy.setStyleSheet("""
+                                                    font-family: "Lucida Console", "Courier New", monospace;
+                                                    font-size: 15px;
+                                                    color:green;
+                                                       """)
+        self.label_ErrorSaveDeploy.setText(message)
+        self.label_ErrorSaveDeploy.show()
 
     def saveDeployOnXml(self, dest_path, deploy_name, source_files_arr):
         try:
@@ -94,21 +177,33 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
             tree = ElementTree()
             root = tree.parse("Deploys.xml")
 
-            # CHECK IF ESISTE A DEPLOY NODE WITH SAME NAME
-            check_exists = root.find('.//deploy[@name="'+ deploy_name + '"]')
+            # CHECK IF EXISTS A DEPLOY NODE WITH SAME NAME
+            check_exists = root.find('.//deploy[@name="' + deploy_name + '"]')
             if check_exists != None:
                 return 0
 
             # CREATE NEW DEPLOY ELEMENT OF XML
-            deploys_node = root.find('.//deploys')
+            deploys_node = root.find('.//deploys')  # FIND THE NODE NAMED 'deploys'
             new_deploy_node = ET.SubElement(deploys_node, 'deploy')
-            new_deploy_node.text = 'New Data'
             new_deploy_node.set('name', deploy_name)
 
+            '''
             prova = [elem.tag for elem in deploys_node.iter() if elem is not deploys_node]
             for pr in prova:
                 print(str(pr))
+            '''
+            # ADD SOURCE PATH FILES SUB-NODES TO THE NEW DEPLOY NODE
+            for path in source_files_arr:
+                path_node = ET.SubElement(new_deploy_node, 'sourceFilePath')
+                path_node.text = path
 
+            # ADD DESTINATION PATH SUB-NODE TO THE NEW DEPLOY NODE
+            destPath_node = ET.SubElement(new_deploy_node, 'destinationPath')
+            destPath_node.text = dest_path
+
+
+
+            # SAVE XML
             tree = ET.ElementTree(root)
             tree.write("Deploys.xml")
 
@@ -117,19 +212,14 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
             print("Error: " + str(error))
 
 
-
-
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     main = Main()
     ShowAddDeploy = AddDeployWindow()
     main.show()
 
-    #BUTTON AddDeploy CLICK EVENT
+    # BUTTON AddDeploy CLICK EVENT
     main.Btn_AddDeploy.clicked.connect(ShowAddDeploy.OPEN)
-
-
 
 
     sys.exit(app.exec_())

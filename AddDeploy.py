@@ -17,6 +17,7 @@ class Ui_AddDeploy(object):
         AddDeploy.resize(1450, 650)
         AddDeploy.setMinimumSize(QtCore.QSize(1450, 650))
         AddDeploy.setMaximumSize(QtCore.QSize(1450, 650))
+        AddDeploy.setStyleSheet("background-color: #c7c7c7;")
         self.centralwidget = QtWidgets.QWidget(AddDeploy)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -80,7 +81,7 @@ class Ui_AddDeploy(object):
         self.textEdit_SourceFiles = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit_SourceFiles.setGeometry(QtCore.QRect(20, 50, 591, 481))
         self.textEdit_SourceFiles.setStyleSheet("QTextEdit {\n"
-"    border: 1px solid gray;\n"
+"    border: 1px solid #0092d1;\n"
 "    border-radius: 5px;\n"
 "    padding: 0 8px;\n"
 "    background: white;\n"
@@ -121,7 +122,7 @@ class Ui_AddDeploy(object):
         self.lineEdit_DestPath = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_DestPath.setGeometry(QtCore.QRect(690, 60, 671, 31))
         self.lineEdit_DestPath.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
+"    border: 1px solid #0092d1;\n"
 "    border-radius: 5px;\n"
 "    padding: 0 8px;\n"
 "    background: white;\n"
@@ -132,7 +133,7 @@ class Ui_AddDeploy(object):
         self.lineEdit_DeployName = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_DeployName.setGeometry(QtCore.QRect(690, 130, 671, 31))
         self.lineEdit_DeployName.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
+"    border: 1px solid #0092d1;\n"
 "    border-radius: 5px;\n"
 "    padding: 0 8px;\n"
 "    background: white;\n"

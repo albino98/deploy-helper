@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #c7c7c7;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -153,7 +156,7 @@ QPushButton:default {
     </property>
     <property name="styleSheet">
      <string notr="true">QTextEdit {
-    border: 1px solid gray;
+    border: 1px solid #0092d1;
     border-radius: 5px;
     padding: 0 8px;
     background: white;
@@ -230,7 +233,7 @@ QPushButton:default {
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
-    border: 1px solid gray;
+    border: 1px solid #0092d1;
     border-radius: 5px;
     padding: 0 8px;
     background: white;
@@ -253,7 +256,7 @@ QPushButton:default {
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
-    border: 1px solid gray;
+    border: 1px solid #0092d1;
     border-radius: 5px;
     padding: 0 8px;
     background: white;

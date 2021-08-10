@@ -1,8 +1,5 @@
 <xml>
 	<deploys>
-
-
-
 		
-	</deploys>
+	<deploy name="1"><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/.gitignore</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/AddDeploy.py</sourceFilePath><destinationPath>C:/Users/acianciotti/Desktop/DeployHelper</destinationPath></deploy><deploy name="2"><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/NOTES.txt</sourceFilePath><destinationPath>C:/Users/acianciotti/Desktop/DeployHelper</destinationPath></deploy><deploy name="3"><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/.gitignore</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/AddDeploy.py</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/AddDeploy.ui</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/DeployHelper.py</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/DeployHelper.ui</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/Deploys.xml</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/functions.py</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/LICENSE</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/main.py</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/main.spec</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/NOTES.txt</sourceFilePath><sourceFilePath>C:/Users/acianciotti/Desktop/DeployHelper/README.md</sourceFilePath><destinationPath>C:/Users/acianciotti/Desktop/DeployHelper/.idea/inspectionProfiles</destinationPath></deploy></deploys>
 </xml>

@@ -14,30 +14,20 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_DeployHelper(object):
     def setupUi(self, DeployHelper):
         DeployHelper.setObjectName("DeployHelper")
-        DeployHelper.resize(1642, 760)
-        DeployHelper.setMinimumSize(QtCore.QSize(1560, 760))
+        DeployHelper.resize(1764, 760)
+        DeployHelper.setMinimumSize(QtCore.QSize(1640, 760))
         DeployHelper.setMouseTracking(False)
+        DeployHelper.setStyleSheet("background-color:#364052;")
         self.centralwidget = QtWidgets.QWidget(DeployHelper)
         self.centralwidget.setObjectName("centralwidget")
-        self.listWidget_deploys = QtWidgets.QListWidget(self.centralwidget)
-        self.listWidget_deploys.setGeometry(QtCore.QRect(10, 50, 256, 661))
-        self.listWidget_deploys.setStyleSheet("QListWidget{\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 5px;\n"
-"    padding: 0 8px;\n"
-"    background: white;\n"
-"    selection-background-color: darkgray;\n"
-"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
-"}")
-        self.listWidget_deploys.setItemAlignment(QtCore.Qt.AlignHCenter)
-        self.listWidget_deploys.setObjectName("listWidget_deploys")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(20, 10, 181, 31))
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(16)
         self.label.setFont(font)
-        self.label.setStyleSheet("font-family: \"Lucida Console\", \"Courier New\", monospace;")
+        self.label.setStyleSheet("font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color:white;")
         self.label.setObjectName("label")
         self.Btn_AddDeploy = QtWidgets.QPushButton(self.centralwidget)
         self.Btn_AddDeploy.setGeometry(QtCore.QRect(280, 50, 121, 41))
@@ -66,11 +56,146 @@ class Ui_DeployHelper(object):
 "}")
         self.Btn_AddDeploy.setObjectName("Btn_AddDeploy")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(420, 50, 1211, 661))
+        self.groupBox.setGeometry(QtCore.QRect(420, 10, 1331, 701))
+        self.groupBox.setStyleSheet("QGroupBox {\n"
+"   /* border: 2px solid #0092d1;*/\n"
+"     border: 2px solid white;\n"
+"    border-radius: 5px;\n"
+"    padding: 0 8px;\n"
+"    selection-background-color: darkgray;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"    color:white;\n"
+"font-size: 15px;\n"
+"}")
         self.groupBox.setObjectName("groupBox")
+        self.Btn_StartDeploy = QtWidgets.QPushButton(self.groupBox)
+        self.Btn_StartDeploy.setGeometry(QtCore.QRect(460, 620, 131, 41))
+        self.Btn_StartDeploy.setStyleSheet("QPushButton {\n"
+"    /*border: 2px solid #000000;*/\n"
+"    border-radius: 8px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #2c509e, stop: 1 #0092d1);\n"
+"    min-width: 80px;\n"
+"    color:white;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"    font-size: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #0092d1, stop: 1 #2c509e);\n"
+"}\n"
+"\n"
+"QPushButton:flat {\n"
+"    border: none; /* no border for a flat push button */\n"
+"}\n"
+"\n"
+"QPushButton:default {\n"
+"    border-color: navy; /* make the default button prominent */\n"
+"}")
+        self.Btn_StartDeploy.setObjectName("Btn_StartDeploy")
+        self.label_2 = QtWidgets.QLabel(self.groupBox)
+        self.label_2.setGeometry(QtCore.QRect(30, 20, 101, 41))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(10)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color:white;")
+        self.label_2.setObjectName("label_2")
+        self.lineEdit_DeployName = QtWidgets.QLineEdit(self.groupBox)
+        self.lineEdit_DeployName.setGeometry(QtCore.QRect(40, 60, 191, 21))
+        self.lineEdit_DeployName.setStyleSheet("/*border: 1px solid #0092d1;*/\n"
+"border: 0px solid #0092d1;\n"
+"    border-radius: 5px;\n"
+"    padding: 0 8px;\n"
+"    background: white;\n"
+"    selection-background-color: darkgray;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"font-size: 14px;")
+        self.lineEdit_DeployName.setObjectName("lineEdit_DeployName")
+        self.label_3 = QtWidgets.QLabel(self.groupBox)
+        self.label_3.setGeometry(QtCore.QRect(30, 90, 111, 41))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(10)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color:white;")
+        self.label_3.setObjectName("label_3")
+        self.textEdit_SourceFiles = QtWidgets.QTextEdit(self.groupBox)
+        self.textEdit_SourceFiles.setGeometry(QtCore.QRect(40, 130, 591, 161))
+        self.textEdit_SourceFiles.setStyleSheet("QTextEdit {\n"
+"   /* border: 1px solid #0092d1;*/\n"
+"    border: 0px solid #0092d1;\n"
+"    border-radius: 5px;\n"
+"    padding: 0 8px;\n"
+"    background: white;\n"
+"    selection-background-color: darkgray;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"    font-size: 14px;\n"
+"}")
+        self.textEdit_SourceFiles.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.textEdit_SourceFiles.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.textEdit_SourceFiles.setLineWrapMode(QtWidgets.QTextEdit.NoWrap)
+        self.textEdit_SourceFiles.setObjectName("textEdit_SourceFiles")
+        self.label_4 = QtWidgets.QLabel(self.groupBox)
+        self.label_4.setGeometry(QtCore.QRect(650, 90, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(10)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color:white;")
+        self.label_4.setObjectName("label_4")
+        self.lineEdit_DestPath = QtWidgets.QLineEdit(self.groupBox)
+        self.lineEdit_DestPath.setGeometry(QtCore.QRect(660, 130, 651, 31))
+        self.lineEdit_DestPath.setStyleSheet("QLineEdit {\n"
+"    /*border: 1px solid #0092d1;*/\n"
+"border: 0px solid #0092d1;\n"
+"    border-radius: 5px;\n"
+"    padding: 0 8px;\n"
+"    background: white;\n"
+"    selection-background-color: #2c509e;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"font-size: 14px;\n"
+"}")
+        self.lineEdit_DestPath.setObjectName("lineEdit_DestPath")
+        self.listWidget_Deploys = QtWidgets.QListWidget(self.centralwidget)
+        self.listWidget_Deploys.setGeometry(QtCore.QRect(10, 50, 251, 661))
+        self.listWidget_Deploys.setStyleSheet("QListWidget {\n"
+"    /*border: 2px solid #0092d1;*/\n"
+" border: 2px solid white;\n"
+"    border-radius: 5px;\n"
+"    padding: 0 8px;\n"
+"    selection-background-color: darkgray;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"}\n"
+"\n"
+"\n"
+" QListWidget::item:selected {\n"
+"                                  border : 0px solid black;\n"
+"                                  /*background : #0092d1;*/\n"
+"                                    border-radius: 1px;\n"
+"                                    background : #9ca2ad;\n"
+"                                        color:white;\n"
+"                                    font-family: \"Lucida Console\", \"Courier New\",monospace;\n"
+"                                        \n"
+"                                  }\n"
+" QListWidget::item {\n"
+"                                  border : 0px solid black;\n"
+"                                    font-family: \"Lucida Console\", \"Courier New\",monospace;\n"
+"color:white;\n"
+"                                  }\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.listWidget_Deploys.setObjectName("listWidget_Deploys")
         DeployHelper.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(DeployHelper)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1642, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1764, 22))
         self.menubar.setObjectName("menubar")
         DeployHelper.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(DeployHelper)
@@ -86,3 +211,9 @@ class Ui_DeployHelper(object):
         self.label.setText(_translate("DeployHelper", "Your Deploys:"))
         self.Btn_AddDeploy.setText(_translate("DeployHelper", "Add Deploy"))
         self.groupBox.setTitle(_translate("DeployHelper", "Manage Deploy"))
+        self.Btn_StartDeploy.setText(_translate("DeployHelper", "Start Deploy"))
+        self.label_2.setText(_translate("DeployHelper", "Deploy Name:"))
+        self.label_3.setText(_translate("DeployHelper", "Source Files:"))
+        self.textEdit_SourceFiles.setPlaceholderText(_translate("DeployHelper", "Source Files"))
+        self.label_4.setText(_translate("DeployHelper", "Destination Path:"))
+        self.lineEdit_DestPath.setPlaceholderText(_translate("DeployHelper", "Enter the destination path"))
