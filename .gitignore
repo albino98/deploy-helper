@@ -1,3 +1,6 @@
 .idea/
 __pycache__/
 venv/
+build/
+pyinstaller.exe
+main.spec

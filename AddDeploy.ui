@@ -26,7 +26,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #c7c7c7;</string>
+   <string notr="true">background-color:#364052;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -38,8 +38,15 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;</string>
+     <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color:white;</string>
     </property>
     <property name="text">
      <string>Source Files:</string>
@@ -50,12 +57,19 @@
      <rect>
       <x>700</x>
       <y>20</y>
-      <width>121</width>
+      <width>151</width>
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;</string>
+     <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color:white;</string>
     </property>
     <property name="text">
      <string>Destination Path:</string>
@@ -66,19 +80,19 @@
      <rect>
       <x>140</x>
       <y>10</y>
-      <width>100</width>
-      <height>25</height>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>84</width>
+      <width>80</width>
       <height>0</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 2px solid #8f8f91;
+    border: 0px solid #0092d1;
     border-radius: 6px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
@@ -106,21 +120,21 @@ QPushButton:default {
    <widget class="QPushButton" name="Btn_SelectDestinationPath">
     <property name="geometry">
      <rect>
-      <x>830</x>
+      <x>860</x>
       <y>20</y>
-      <width>100</width>
-      <height>25</height>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>84</width>
+      <width>80</width>
       <height>0</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 2px solid #8f8f91;
+    border: 0px solid #0092d1;
     border-radius: 6px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
@@ -156,7 +170,7 @@ QPushButton:default {
     </property>
     <property name="styleSheet">
      <string notr="true">QTextEdit {
-    border: 1px solid #0092d1;
+    border: 0px solid #0092d1;
     border-radius: 5px;
     padding: 0 8px;
     background: white;
@@ -179,7 +193,7 @@ QPushButton:default {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    /*border: 2px solid #000000;*/
+    border: 1px solid white;
     border-radius: 8px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #2c509e, stop: 1 #0092d1);
@@ -215,8 +229,15 @@ QPushButton:default {
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;</string>
+     <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+color:white;</string>
     </property>
     <property name="text">
      <string>Deploy Name:</string>
@@ -233,7 +254,7 @@ QPushButton:default {
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
-    border: 1px solid #0092d1;
+    border: 0px solid #0092d1;
     border-radius: 5px;
     padding: 0 8px;
     background: white;
@@ -256,7 +277,7 @@ QPushButton:default {
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
-    border: 1px solid #0092d1;
+    border: 0px solid #0092d1;
     border-radius: 5px;
     padding: 0 8px;
     background: white;
@@ -274,7 +295,7 @@ QPushButton:default {
     </property>
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>550</y>
       <width>631</width>
       <height>51</height>
@@ -283,7 +304,7 @@ QPushButton:default {
     <property name="styleSheet">
      <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
 font-size: 15px;
-color:red;</string>
+color:#ff8400;</string>
     </property>
     <property name="text">
      <string>Error while saving the deploy</string>

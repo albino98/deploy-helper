@@ -14,14 +14,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_DeployHelper(object):
     def setupUi(self, DeployHelper):
         DeployHelper.setObjectName("DeployHelper")
-        DeployHelper.resize(1764, 760)
-        DeployHelper.setMinimumSize(QtCore.QSize(1640, 760))
+        DeployHelper.resize(1771, 806)
+        DeployHelper.setMinimumSize(QtCore.QSize(1771, 806))
+        DeployHelper.setMaximumSize(QtCore.QSize(1771, 806))
         DeployHelper.setMouseTracking(False)
         DeployHelper.setStyleSheet("background-color:#364052;")
         self.centralwidget = QtWidgets.QWidget(DeployHelper)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 10, 181, 31))
+        self.label.setGeometry(QtCore.QRect(30, 10, 181, 31))
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(16)
@@ -32,7 +33,7 @@ class Ui_DeployHelper(object):
         self.Btn_AddDeploy = QtWidgets.QPushButton(self.centralwidget)
         self.Btn_AddDeploy.setGeometry(QtCore.QRect(280, 50, 121, 41))
         self.Btn_AddDeploy.setStyleSheet("QPushButton {\n"
-"    /*border: 2px solid #000000;*/\n"
+"     border: 1px solid white;\n"
 "    border-radius: 8px;\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #2c509e, stop: 1 #0092d1);\n"
@@ -69,9 +70,9 @@ class Ui_DeployHelper(object):
 "}")
         self.groupBox.setObjectName("groupBox")
         self.Btn_StartDeploy = QtWidgets.QPushButton(self.groupBox)
-        self.Btn_StartDeploy.setGeometry(QtCore.QRect(460, 620, 131, 41))
+        self.Btn_StartDeploy.setGeometry(QtCore.QRect(610, 640, 131, 41))
         self.Btn_StartDeploy.setStyleSheet("QPushButton {\n"
-"    /*border: 2px solid #000000;*/\n"
+"    border: 1px solid white;\n"
 "    border-radius: 8px;\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #2c509e, stop: 1 #0092d1);\n"
@@ -127,7 +128,7 @@ class Ui_DeployHelper(object):
         self.textEdit_SourceFiles.setGeometry(QtCore.QRect(40, 130, 591, 161))
         self.textEdit_SourceFiles.setStyleSheet("QTextEdit {\n"
 "   /* border: 1px solid #0092d1;*/\n"
-"    border: 0px solid #0092d1;\n"
+"    border: 1px solid #0092d1;\n"
 "    border-radius: 5px;\n"
 "    padding: 0 8px;\n"
 "    background: white;\n"
@@ -161,8 +162,15 @@ class Ui_DeployHelper(object):
 "font-size: 14px;\n"
 "}")
         self.lineEdit_DestPath.setObjectName("lineEdit_DestPath")
+        self.label_ResultDeploy = QtWidgets.QLabel(self.groupBox)
+        self.label_ResultDeploy.setEnabled(True)
+        self.label_ResultDeploy.setGeometry(QtCore.QRect(40, 580, 1281, 51))
+        self.label_ResultDeploy.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"font-size: 15px;\n"
+"color:red;")
+        self.label_ResultDeploy.setObjectName("label_ResultDeploy")
         self.listWidget_Deploys = QtWidgets.QListWidget(self.centralwidget)
-        self.listWidget_Deploys.setGeometry(QtCore.QRect(10, 50, 251, 661))
+        self.listWidget_Deploys.setGeometry(QtCore.QRect(20, 50, 241, 661))
         self.listWidget_Deploys.setStyleSheet("QListWidget {\n"
 "    /*border: 2px solid #0092d1;*/\n"
 " border: 2px solid white;\n"
@@ -175,9 +183,9 @@ class Ui_DeployHelper(object):
 "\n"
 " QListWidget::item:selected {\n"
 "                                  border : 0px solid black;\n"
-"                                  /*background : #0092d1;*/\n"
+"                                  background : #0092d1;\n"
 "                                    border-radius: 1px;\n"
-"                                    background : #9ca2ad;\n"
+"                                    /*background : #9ca2ad;*/\n"
 "                                        color:white;\n"
 "                                    font-family: \"Lucida Console\", \"Courier New\",monospace;\n"
 "                                        \n"
@@ -193,9 +201,35 @@ class Ui_DeployHelper(object):
 "\n"
 "")
         self.listWidget_Deploys.setObjectName("listWidget_Deploys")
+        self.Btn_ChangeTheme = QtWidgets.QPushButton(self.centralwidget)
+        self.Btn_ChangeTheme.setGeometry(QtCore.QRect(1650, 720, 101, 31))
+        self.Btn_ChangeTheme.setStyleSheet("QPushButton {\n"
+"     border: 1px solid white;\n"
+"    border-radius: 8px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #2c509e, stop: 1 #0092d1);\n"
+"    min-width: 80px;\n"
+"    color:white;\n"
+"    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"    font-size: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #0092d1, stop: 1 #2c509e);\n"
+"}\n"
+"\n"
+"QPushButton:flat {\n"
+"    border: none; /* no border for a flat push button */\n"
+"}\n"
+"\n"
+"QPushButton:default {\n"
+"    border-color: navy; /* make the default button prominent */\n"
+"}")
+        self.Btn_ChangeTheme.setObjectName("Btn_ChangeTheme")
         DeployHelper.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(DeployHelper)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1764, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1771, 22))
         self.menubar.setObjectName("menubar")
         DeployHelper.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(DeployHelper)
@@ -217,3 +251,5 @@ class Ui_DeployHelper(object):
         self.textEdit_SourceFiles.setPlaceholderText(_translate("DeployHelper", "Source Files"))
         self.label_4.setText(_translate("DeployHelper", "Destination Path:"))
         self.lineEdit_DestPath.setPlaceholderText(_translate("DeployHelper", "Enter the destination path"))
+        self.label_ResultDeploy.setText(_translate("DeployHelper", "Error while executing deploy"))
+        self.Btn_ChangeTheme.setText(_translate("DeployHelper", "Light"))

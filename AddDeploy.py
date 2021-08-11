@@ -17,22 +17,32 @@ class Ui_AddDeploy(object):
         AddDeploy.resize(1450, 650)
         AddDeploy.setMinimumSize(QtCore.QSize(1450, 650))
         AddDeploy.setMaximumSize(QtCore.QSize(1450, 650))
-        AddDeploy.setStyleSheet("background-color: #c7c7c7;")
+        AddDeploy.setStyleSheet("background-color:#364052;")
         self.centralwidget = QtWidgets.QWidget(AddDeploy)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(30, 10, 101, 21))
-        self.label.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;")
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(10)
+        self.label.setFont(font)
+        self.label.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color:white;")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(700, 20, 121, 21))
-        self.label_2.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;")
+        self.label_2.setGeometry(QtCore.QRect(700, 20, 151, 21))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(10)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color:white;")
         self.label_2.setObjectName("label_2")
         self.Btn_SelectSourceFiles = QtWidgets.QPushButton(self.centralwidget)
-        self.Btn_SelectSourceFiles.setGeometry(QtCore.QRect(140, 10, 100, 25))
-        self.Btn_SelectSourceFiles.setMinimumSize(QtCore.QSize(84, 0))
+        self.Btn_SelectSourceFiles.setGeometry(QtCore.QRect(140, 10, 101, 31))
+        self.Btn_SelectSourceFiles.setMinimumSize(QtCore.QSize(80, 0))
         self.Btn_SelectSourceFiles.setStyleSheet("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
+"    border: 0px solid #0092d1;\n"
 "    border-radius: 6px;\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
@@ -54,10 +64,10 @@ class Ui_AddDeploy(object):
 "}")
         self.Btn_SelectSourceFiles.setObjectName("Btn_SelectSourceFiles")
         self.Btn_SelectDestinationPath = QtWidgets.QPushButton(self.centralwidget)
-        self.Btn_SelectDestinationPath.setGeometry(QtCore.QRect(830, 20, 100, 25))
-        self.Btn_SelectDestinationPath.setMinimumSize(QtCore.QSize(84, 0))
+        self.Btn_SelectDestinationPath.setGeometry(QtCore.QRect(860, 20, 101, 31))
+        self.Btn_SelectDestinationPath.setMinimumSize(QtCore.QSize(80, 0))
         self.Btn_SelectDestinationPath.setStyleSheet("QPushButton {\n"
-"    border: 2px solid #8f8f91;\n"
+"    border: 0px solid #0092d1;\n"
 "    border-radius: 6px;\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
@@ -81,7 +91,7 @@ class Ui_AddDeploy(object):
         self.textEdit_SourceFiles = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit_SourceFiles.setGeometry(QtCore.QRect(20, 50, 591, 481))
         self.textEdit_SourceFiles.setStyleSheet("QTextEdit {\n"
-"    border: 1px solid #0092d1;\n"
+"    border: 0px solid #0092d1;\n"
 "    border-radius: 5px;\n"
 "    padding: 0 8px;\n"
 "    background: white;\n"
@@ -92,7 +102,7 @@ class Ui_AddDeploy(object):
         self.Btn_SaveDeploy = QtWidgets.QPushButton(self.centralwidget)
         self.Btn_SaveDeploy.setGeometry(QtCore.QRect(670, 560, 150, 40))
         self.Btn_SaveDeploy.setStyleSheet("QPushButton {\n"
-"    /*border: 2px solid #000000;*/\n"
+"    border: 1px solid white;\n"
 "    border-radius: 8px;\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #2c509e, stop: 1 #0092d1);\n"
@@ -117,12 +127,17 @@ class Ui_AddDeploy(object):
         self.Btn_SaveDeploy.setObjectName("Btn_SaveDeploy")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(700, 100, 121, 21))
-        self.label_3.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;")
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(10)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
+"color:white;")
         self.label_3.setObjectName("label_3")
         self.lineEdit_DestPath = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_DestPath.setGeometry(QtCore.QRect(690, 60, 671, 31))
         self.lineEdit_DestPath.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid #0092d1;\n"
+"    border: 0px solid #0092d1;\n"
 "    border-radius: 5px;\n"
 "    padding: 0 8px;\n"
 "    background: white;\n"
@@ -133,7 +148,7 @@ class Ui_AddDeploy(object):
         self.lineEdit_DeployName = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_DeployName.setGeometry(QtCore.QRect(690, 130, 671, 31))
         self.lineEdit_DeployName.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid #0092d1;\n"
+"    border: 0px solid #0092d1;\n"
 "    border-radius: 5px;\n"
 "    padding: 0 8px;\n"
 "    background: white;\n"
@@ -143,10 +158,10 @@ class Ui_AddDeploy(object):
         self.lineEdit_DeployName.setObjectName("lineEdit_DeployName")
         self.label_ErrorSaveDeploy = QtWidgets.QLabel(self.centralwidget)
         self.label_ErrorSaveDeploy.setEnabled(True)
-        self.label_ErrorSaveDeploy.setGeometry(QtCore.QRect(20, 550, 631, 51))
+        self.label_ErrorSaveDeploy.setGeometry(QtCore.QRect(30, 550, 631, 51))
         self.label_ErrorSaveDeploy.setStyleSheet(" font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
 "font-size: 15px;\n"
-"color:red;")
+"color:#ff8400;")
         self.label_ErrorSaveDeploy.setObjectName("label_ErrorSaveDeploy")
         AddDeploy.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(AddDeploy)

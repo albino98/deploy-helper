@@ -6,14 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1764</width>
-    <height>760</height>
+    <width>1771</width>
+    <height>806</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1640</width>
-    <height>760</height>
+    <width>1771</width>
+    <height>806</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1771</width>
+    <height>806</height>
    </size>
   </property>
   <property name="mouseTracking">
@@ -29,7 +35,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>10</y>
       <width>181</width>
       <height>31</height>
@@ -60,7 +66,7 @@ color:white;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    /*border: 2px solid #000000;*/
+     border: 1px solid white;
     border-radius: 8px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #2c509e, stop: 1 #0092d1);
@@ -114,15 +120,15 @@ font-size: 15px;
     <widget class="QPushButton" name="Btn_StartDeploy">
      <property name="geometry">
       <rect>
-       <x>460</x>
-       <y>620</y>
+       <x>610</x>
+       <y>640</y>
        <width>131</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    /*border: 2px solid #000000;*/
+    border: 1px solid white;
     border-radius: 8px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #2c509e, stop: 1 #0092d1);
@@ -227,7 +233,7 @@ color:white;</string>
      <property name="styleSheet">
       <string notr="true">QTextEdit {
    /* border: 1px solid #0092d1;*/
-	border: 0px solid #0092d1;
+	border: 1px solid #0092d1;
     border-radius: 5px;
     padding: 0 8px;
     background: white;
@@ -297,13 +303,34 @@ font-size: 14px;
       <string>Enter the destination path</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_ResultDeploy">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>580</y>
+       <width>1281</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+font-size: 15px;
+color:red;</string>
+     </property>
+     <property name="text">
+      <string>Error while executing deploy</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QListWidget" name="listWidget_Deploys">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>50</y>
-      <width>251</width>
+      <width>241</width>
       <height>661</height>
      </rect>
     </property>
@@ -320,9 +347,9 @@ font-size: 14px;
 
  QListWidget::item:selected {
                                   border : 0px solid black;
-                                  /*background : #0092d1;*/
+                                  background : #0092d1;
 									border-radius: 1px;
-									background : #9ca2ad;
+									/*background : #9ca2ad;*/
 										color:white;
 									font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;,monospace;
 										
@@ -339,13 +366,51 @@ color:white;
 </string>
     </property>
    </widget>
+   <widget class="QPushButton" name="Btn_ChangeTheme">
+    <property name="geometry">
+     <rect>
+      <x>1650</x>
+      <y>720</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+     border: 1px solid white;
+    border-radius: 8px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #2c509e, stop: 1 #0092d1);
+    min-width: 80px;
+	color:white;
+	font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
+	font-size: 15px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #0092d1, stop: 1 #2c509e);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+    </property>
+    <property name="text">
+     <string>Light</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1764</width>
+     <width>1771</width>
      <height>22</height>
     </rect>
    </property>
