@@ -21,7 +21,7 @@ class Ui_AddDeploy(object):
         self.centralwidget = QtWidgets.QWidget(AddDeploy)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(30, 10, 101, 21))
+        self.label.setGeometry(QtCore.QRect(20, 20, 201, 21))
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(10)
@@ -30,7 +30,7 @@ class Ui_AddDeploy(object):
 "color:white;")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(700, 20, 151, 21))
+        self.label_2.setGeometry(QtCore.QRect(690, 20, 341, 21))
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(10)
@@ -39,7 +39,7 @@ class Ui_AddDeploy(object):
 "color:white;")
         self.label_2.setObjectName("label_2")
         self.Btn_SelectSourceFiles = QtWidgets.QPushButton(self.centralwidget)
-        self.Btn_SelectSourceFiles.setGeometry(QtCore.QRect(140, 10, 101, 31))
+        self.Btn_SelectSourceFiles.setGeometry(QtCore.QRect(490, 10, 121, 31))
         self.Btn_SelectSourceFiles.setMinimumSize(QtCore.QSize(80, 0))
         self.Btn_SelectSourceFiles.setStyleSheet("QPushButton {\n"
 "    border: 0px solid #0092d1;\n"
@@ -64,7 +64,7 @@ class Ui_AddDeploy(object):
 "}")
         self.Btn_SelectSourceFiles.setObjectName("Btn_SelectSourceFiles")
         self.Btn_SelectDestinationPath = QtWidgets.QPushButton(self.centralwidget)
-        self.Btn_SelectDestinationPath.setGeometry(QtCore.QRect(860, 20, 101, 31))
+        self.Btn_SelectDestinationPath.setGeometry(QtCore.QRect(1240, 20, 121, 31))
         self.Btn_SelectDestinationPath.setMinimumSize(QtCore.QSize(80, 0))
         self.Btn_SelectDestinationPath.setStyleSheet("QPushButton {\n"
 "    border: 0px solid #0092d1;\n"
@@ -126,7 +126,7 @@ class Ui_AddDeploy(object):
 "}")
         self.Btn_SaveDeploy.setObjectName("Btn_SaveDeploy")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(700, 100, 121, 21))
+        self.label_3.setGeometry(QtCore.QRect(690, 100, 331, 21))
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(10)

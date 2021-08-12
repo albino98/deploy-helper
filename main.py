@@ -1,8 +1,10 @@
 import time
 from xml.etree.ElementTree import ElementTree
 
+import PyQt5
+from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtCore import QTimer
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QGuiApplication
 from PyQt5.QtWidgets import QMainWindow, QApplication, QSplashScreen, QFileDialog, QListWidgetItem, QListWidget
 from DeployHelper import Ui_DeployHelper
 from AddDeploy import Ui_AddDeploy
@@ -649,17 +651,43 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
             print("Error: " + str(error))
 
 
+def get_resolution():
+
+    app = QtWidgets.QApplication(sys.argv)
+
+    print(app.primaryScreen())
+
+    d = app.desktop()
+
+    print(d.screenGeometry())
+    print(d.availableGeometry())
+    print(d.screenCount())
+
+    g = d.screenGeometry()
+    return (g.width(), g.height())
+
 if __name__ == "__main__":
+
+    x, y = get_resolution()
+
+    if x > 1920 and y > 1080:
+        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
+    else:
+        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, False)
+        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, False)
+
     app = QApplication(sys.argv)
-    # start splash screen
+    # prepare setting screen
     pixmap = QPixmap("splash.png")
-    splash = QSplashScreen(pixmap)
-    splash.show()
-    # end splash screen
+    screen = QGuiApplication.primaryScreen()
+    #screen = QGuiApplication.screens()[1]
+    splash = QSplashScreen(screen, pixmap)
+    # end setting splash screen
 
     main = Main()
     ShowAddDeploy = AddDeployWindow()  #prepare main window
-
+    splash.show()  # show the splash screen
     time.sleep(5)  # wait 5 seconds before close splash screen
     splash.close()
     main.show()
