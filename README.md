@@ -8,7 +8,7 @@
 
 **Deploy Helper** is designed to help developers during application releases. Many times to create the release package to be copied to the servers, it is necessary to copy many files (compiled project files such as .dll, etc.) which can be located on various different locations and this can be time consuming.
 
-So, the idea was born to solve this problem, creating a software where you can **extensively configure and save your deployments** (in an xml file) and execute them at any time with just one click. For now the software allows the creation, saving and execution of the deploy (copy of the files) but the next functions in addition to the modification and deletion of the deployments will be more advanced such as linking documents to deployments, scheduling of deployments, execution of other custom tasks related to deployment (such as query on the db), etc.
+So, the idea was born to solve this problem, creating a software where you can **extensively configure and save your deployments** (in an xml file) **and execute them at any time with just one click.** For now the software allows the creation, saving and execution of the deploy (copy of the files) but the next functions in addition to the modification and deletion of the deployments will be more advanced such as linking documents to deployments, scheduling of deployments, execution of other custom tasks related to deployment (such as query on the db), etc.
 
 #### Dark Theme:
 
