@@ -13,6 +13,9 @@
 
 So, the idea was born to solve this problem, creating a software where you can **extensively configure and save your deployments** (in an xml file) **and execute them at any time with just one click.** For now the software allows the creation, saving and execution of the deploy (copy of the files) but the next functions in addition to the modification and deletion of the deployments will be more advanced such as linking documents to deployments, scheduling of deployments, execution of other custom tasks related to deployment (such as query on the db), etc.
 
+
+Obviously Deploy Helper isn't just for programmers, it can be used by anyone who needs to copy the same files often.
+
 #### Dark Theme:
 
 
