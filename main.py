@@ -4,7 +4,7 @@ from xml.etree.ElementTree import ElementTree
 import PyQt5
 from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtCore import QTimer
-from PyQt5.QtGui import QPixmap, QGuiApplication
+from PyQt5.QtGui import QPixmap, QGuiApplication, QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QSplashScreen, QFileDialog, QListWidgetItem, QListWidget
 from DeployHelper import Ui_DeployHelper
 from AddDeploy import Ui_AddDeploy
@@ -348,6 +348,7 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
             self.label.setStyleSheet('font-family: "Lucida Console", "Courier New", monospace;')
             self.label_2.setStyleSheet('font-family: "Lucida Console", "Courier New", monospace;')
             self.label_3.setStyleSheet('font-family: "Lucida Console", "Courier New", monospace;')
+            self.Btn_SelectSourceFiles.setIcon(QIcon("./icons/icons8-add-file-48.png"))
             self.Btn_SelectSourceFiles.setStyleSheet('''
                 QPushButton {
                     border: 1px solid #0092d1;
@@ -371,6 +372,7 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
                     border-color: navy; /* make the default button prominent */
                 }
             ''')
+            self.Btn_SelectDestinationPath.setIcon(QIcon("./icons/icons8-folder-48.png"))
             self.Btn_SelectDestinationPath.setStyleSheet('''
                 QPushButton {
                     border: 1px solid #0092d1;
@@ -440,12 +442,14 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
                 font-family: "Lucida Console", "Courier New", monospace;
                 color:white;
             ''')
+            self.Btn_SelectSourceFiles.setIcon(QIcon("./icons/icons8-add-file-48.png"))
             self.Btn_SelectSourceFiles.setStyleSheet('''
                 QPushButton {
-                    border: 0px solid #0092d1;
+                    border: 0px solid black;
                     border-radius: 6px;
                     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+                                                      
                     min-width: 80px;
                     font-family: "Lucida Console", "Courier New", monospace;
                 }
@@ -463,6 +467,7 @@ class AddDeployWindow(QMainWindow, Ui_AddDeploy):
                     border-color: navy; /* make the default button prominent */
                 }
             ''')
+            self.Btn_SelectDestinationPath.setIcon(QIcon("./icons/icons8-folder-48.png"))
             self.Btn_SelectDestinationPath.setStyleSheet('''
                 QPushButton {
                     border: 0px solid #0092d1;

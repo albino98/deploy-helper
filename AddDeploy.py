@@ -39,13 +39,15 @@ class Ui_AddDeploy(object):
 "color:white;")
         self.label_2.setObjectName("label_2")
         self.Btn_SelectSourceFiles = QtWidgets.QPushButton(self.centralwidget)
-        self.Btn_SelectSourceFiles.setGeometry(QtCore.QRect(490, 10, 121, 31))
+        self.Btn_SelectSourceFiles.setGeometry(QtCore.QRect(519, 10, 91, 41))
         self.Btn_SelectSourceFiles.setMinimumSize(QtCore.QSize(80, 0))
         self.Btn_SelectSourceFiles.setStyleSheet("QPushButton {\n"
-"    border: 0px solid #0092d1;\n"
+"    border: 0px solid black;\n"
 "    border-radius: 6px;\n"
+"\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"\n"
 "    min-width: 80px;\n"
 "    font-family: \"Lucida Console\", \"Courier New\", monospace;\n"
 "}\n"
@@ -62,9 +64,14 @@ class Ui_AddDeploy(object):
 "QPushButton:default {\n"
 "    border-color: navy; /* make the default button prominent */\n"
 "}")
+        self.Btn_SelectSourceFiles.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("dist/icons/icons8-add-file-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Btn_SelectSourceFiles.setIcon(icon)
+        self.Btn_SelectSourceFiles.setIconSize(QtCore.QSize(36, 36))
         self.Btn_SelectSourceFiles.setObjectName("Btn_SelectSourceFiles")
         self.Btn_SelectDestinationPath = QtWidgets.QPushButton(self.centralwidget)
-        self.Btn_SelectDestinationPath.setGeometry(QtCore.QRect(1240, 20, 121, 31))
+        self.Btn_SelectDestinationPath.setGeometry(QtCore.QRect(1270, 10, 91, 41))
         self.Btn_SelectDestinationPath.setMinimumSize(QtCore.QSize(80, 0))
         self.Btn_SelectDestinationPath.setStyleSheet("QPushButton {\n"
 "    border: 0px solid #0092d1;\n"
@@ -87,9 +94,14 @@ class Ui_AddDeploy(object):
 "QPushButton:default {\n"
 "    border-color: navy; /* make the default button prominent */\n"
 "}")
+        self.Btn_SelectDestinationPath.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("dist/icons/icons8-folder-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Btn_SelectDestinationPath.setIcon(icon1)
+        self.Btn_SelectDestinationPath.setIconSize(QtCore.QSize(36, 36))
         self.Btn_SelectDestinationPath.setObjectName("Btn_SelectDestinationPath")
         self.textEdit_SourceFiles = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit_SourceFiles.setGeometry(QtCore.QRect(20, 50, 591, 481))
+        self.textEdit_SourceFiles.setGeometry(QtCore.QRect(20, 70, 591, 471))
         self.textEdit_SourceFiles.setStyleSheet("QTextEdit {\n"
 "    border: 0px solid #0092d1;\n"
 "    border-radius: 5px;\n"
@@ -126,7 +138,7 @@ class Ui_AddDeploy(object):
 "}")
         self.Btn_SaveDeploy.setObjectName("Btn_SaveDeploy")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(690, 100, 331, 21))
+        self.label_3.setGeometry(QtCore.QRect(690, 110, 331, 21))
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(10)
@@ -135,7 +147,7 @@ class Ui_AddDeploy(object):
 "color:white;")
         self.label_3.setObjectName("label_3")
         self.lineEdit_DestPath = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_DestPath.setGeometry(QtCore.QRect(690, 60, 671, 31))
+        self.lineEdit_DestPath.setGeometry(QtCore.QRect(690, 70, 671, 31))
         self.lineEdit_DestPath.setStyleSheet("QLineEdit {\n"
 "    border: 0px solid #0092d1;\n"
 "    border-radius: 5px;\n"
@@ -146,7 +158,7 @@ class Ui_AddDeploy(object):
 "}")
         self.lineEdit_DestPath.setObjectName("lineEdit_DestPath")
         self.lineEdit_DeployName = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_DeployName.setGeometry(QtCore.QRect(690, 130, 671, 31))
+        self.lineEdit_DeployName.setGeometry(QtCore.QRect(690, 140, 671, 31))
         self.lineEdit_DeployName.setStyleSheet("QLineEdit {\n"
 "    border: 0px solid #0092d1;\n"
 "    border-radius: 5px;\n"
@@ -180,8 +192,6 @@ class Ui_AddDeploy(object):
         AddDeploy.setWindowTitle(_translate("AddDeploy", "MainWindow"))
         self.label.setText(_translate("AddDeploy", "Source Files:"))
         self.label_2.setText(_translate("AddDeploy", "Destination Path:"))
-        self.Btn_SelectSourceFiles.setText(_translate("AddDeploy", "Select Files"))
-        self.Btn_SelectDestinationPath.setText(_translate("AddDeploy", "Select Path"))
         self.textEdit_SourceFiles.setPlaceholderText(_translate("AddDeploy", "Source Files"))
         self.Btn_SaveDeploy.setText(_translate("AddDeploy", "Save Deploy"))
         self.label_3.setText(_translate("AddDeploy", "Deploy Name:"))

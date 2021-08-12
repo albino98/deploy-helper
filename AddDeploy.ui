@@ -78,10 +78,10 @@ color:white;</string>
    <widget class="QPushButton" name="Btn_SelectSourceFiles">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>519</x>
       <y>10</y>
-      <width>121</width>
-      <height>31</height>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -92,10 +92,12 @@ color:white;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 0px solid #0092d1;
+    border: 0px solid black;
     border-radius: 6px;
+
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+
     min-width: 80px;
     font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, monospace;
 }
@@ -114,16 +116,26 @@ QPushButton:default {
 }</string>
     </property>
     <property name="text">
-     <string>Select Files</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>dist/icons/icons8-add-file-48.png</normaloff>dist/icons/icons8-add-file-48.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>36</width>
+      <height>36</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="Btn_SelectDestinationPath">
     <property name="geometry">
      <rect>
-      <x>1240</x>
-      <y>20</y>
-      <width>121</width>
-      <height>31</height>
+      <x>1270</x>
+      <y>10</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -156,16 +168,26 @@ QPushButton:default {
 }</string>
     </property>
     <property name="text">
-     <string>Select Path</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>dist/icons/icons8-folder-48.png</normaloff>dist/icons/icons8-folder-48.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>36</width>
+      <height>36</height>
+     </size>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit_SourceFiles">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>50</y>
+      <y>70</y>
       <width>591</width>
-      <height>481</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -224,7 +246,7 @@ QPushButton:default {
     <property name="geometry">
      <rect>
       <x>690</x>
-      <y>100</y>
+      <y>110</y>
       <width>331</width>
       <height>21</height>
      </rect>
@@ -247,7 +269,7 @@ color:white;</string>
     <property name="geometry">
      <rect>
       <x>690</x>
-      <y>60</y>
+      <y>70</y>
       <width>671</width>
       <height>31</height>
      </rect>
@@ -270,7 +292,7 @@ color:white;</string>
     <property name="geometry">
      <rect>
       <x>690</x>
-      <y>130</y>
+      <y>140</y>
       <width>671</width>
       <height>31</height>
      </rect>
