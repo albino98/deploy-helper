@@ -13,8 +13,32 @@
 
 So, the idea was born to solve this problem, creating a software where you can **extensively configure and save your deployments** (in an xml file) **and execute them at any time with just one click.** For now the software allows the creation, saving and execution of the deploy (copy of the files) but the next functions in addition to the modification and deletion of the deployments will be more advanced such as linking documents to deployments, scheduling of deployments, execution of other custom tasks related to deployment (such as query on the db), etc.
 
-
 Obviously Deploy Helper isn't just for programmers, it can be used by anyone who needs to copy the same files often.
+
+
+### How it work
+
+The software work with an xml file which is easy to understand and modify. In fact, you can modify the xml file even outside the program (with any editor) by adding, modifying or deleting the "deploy" nodes that will then be read by the program. The structure of the xml is really simple. Below an example:
+
+~~~ xml
+
+<xml>
+	<deploys>
+		<deploy name="test_deploy">
+			<sourceFilePath>C:/xampp/htdocs/index.php</sourceFilePath>
+			<sourceFilePath>C:/xampp/htdocs/favicon.ico</sourceFilePath>
+			<sourceFilePath>C:/xampp/htdocs/applications.html</sourceFilePath>
+			<sourceFilePath>C:/xampp/htdocs/bitnami.css</sourceFilePath>
+			<destinationPath>C:/xampp/htdocs/xampp</destinationPath>
+		</deploy>
+		<deploy name="test_deploy2">
+			<sourceFilePath>C:/xampp/htdocs/bitnami.css</sourceFilePath>
+			<destinationPath>C:/xampp/htdocs/xampp</destinationPath>
+		</deploy>
+	</deploys>
+</xml>
+
+~~~
 
 #### Dark Theme:
 
