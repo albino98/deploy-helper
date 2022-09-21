@@ -119,6 +119,11 @@ Now you should have "build" and "dist" folder. In "dist" folder you have main.ex
 </xml>
 ~~~
 
+<a href="https://www.buymeacoffee.com/albyc">
+         <img alt="BuyMeACoffee" src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
+         style="height: 30px !important; width: 150px !important">
+      </a>
+
 ## License 
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
